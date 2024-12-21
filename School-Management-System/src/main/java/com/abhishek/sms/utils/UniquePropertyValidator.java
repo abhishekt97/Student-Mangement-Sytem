@@ -2,6 +2,7 @@ package com.abhishek.sms.utils;
 
 import com.abhishek.sms.exception.ConflictException;
 import com.abhishek.sms.repository.user.UserRepository;
+import com.abhishek.sms.utils.messages.ErrorMessages;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 

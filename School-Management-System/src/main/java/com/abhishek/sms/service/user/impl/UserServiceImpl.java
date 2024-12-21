@@ -1,15 +1,17 @@
 package com.abhishek.sms.service.user.impl;
 
 import com.abhishek.sms.entity.concretes.user.User;
+import com.abhishek.sms.entity.enums.RoleType;
 import com.abhishek.sms.exception.ResourceNotFoundException;
 import com.abhishek.sms.payload.request.user.UserRequest;
 import com.abhishek.sms.payload.response.user.UserResponse;
 import com.abhishek.sms.repository.user.UserRepository;
 import com.abhishek.sms.service.user.UserService;
-import com.abhishek.sms.utils.ErrorMessages;
+import com.abhishek.sms.utils.messages.ErrorMessages;
 import com.abhishek.sms.utils.PageUtil;
 import com.abhishek.sms.utils.UniquePropertyValidator;
 import com.abhishek.sms.utils.UserMapper;
+import com.abhishek.sms.utils.messages.SuccessMessages;
 import jakarta.servlet.http.HttpServletRequest;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
@@ -51,8 +53,7 @@ public class UserServiceImpl implements UserService {
     @Override
     public UserResponse getUserById(Long id) throws ResourceNotFoundException {
 
-        User user= userRepository.findById(id).orElseThrow(
-                ()-> new ResourceNotFoundException(String.format(ErrorMessages.NOT_FOUND_USER, id)));
+        User user= findUserById(id);
 
         return mapper.mapUserToUserResponse(user);
     }
@@ -69,11 +70,39 @@ public class UserServiceImpl implements UserService {
     @Override
     public String updateUser(Long id, UserRequest userRequest) throws ResourceNotFoundException {
 
-        User user = userRepository.findById(id).orElseThrow(
+        User user = findUserById(id);
+
+        user.setUsername(userRequest.getUsername());
+        user.setFirstName(userRequest.getFirstName());
+        user.setLastName(userRequest.getLastName());
+        user.setEmail(userRequest.getEmail());
+        user.setBirthday(userRequest.getBirthday());
+        user.setGender(userRequest.getGender());
+        user.setFatherName(userRequest.getFatherName());
+        user.setMotherName(userRequest.getMotherName());
+        user.setPhoneNumber(userRequest.getPhoneNumber());
+
+        return SuccessMessages.USER_UPDATE;
+    }
+
+    @Override
+    public String deleteUserById(Long id, HttpServletRequest request) throws ResourceNotFoundException {
+
+        User user = findUserById(id);
+
+        String username = (String) request.getAttribute("username");
+
+        User loggedInUser = userRepository.findByUsername(username);
+
+        RoleType roleType = loggedInUser.getRoleType();
+
+
+        return null;
+    }
+
+    private User findUserById(Long id) throws ResourceNotFoundException {
+        return userRepository.findById(id).orElseThrow(
                 () -> new ResourceNotFoundException(String.format(ErrorMessages.NOT_FOUND_USER, id)));
-
-
-
     }
 
 

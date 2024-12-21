@@ -20,4 +20,6 @@ public interface UserService {
     public UserResponse getUserByUsername(String username);
 
     public String  updateUser(Long id, UserRequest userRequest) throws ResourceNotFoundException;
+
+    public String  deleteUserById(Long id, HttpServletRequest request) throws ResourceNotFoundException;
 }

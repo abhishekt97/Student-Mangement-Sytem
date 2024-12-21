@@ -1,4 +1,4 @@
-package com.abhishek.sms.utils;
+package com.abhishek.sms.utils.messages;
 
 public class ErrorMessages {
 
