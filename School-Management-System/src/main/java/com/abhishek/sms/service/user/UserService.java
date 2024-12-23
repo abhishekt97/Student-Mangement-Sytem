@@ -5,6 +5,7 @@ import com.abhishek.sms.exception.ResourceNotFoundException;
 import com.abhishek.sms.payload.request.user.UserRequest;
 import com.abhishek.sms.payload.response.user.UserResponse;
 import jakarta.servlet.http.HttpServletRequest;
+import org.apache.coyote.BadRequestException;
 import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Service;
 
@@ -21,5 +22,5 @@ public interface UserService {
 
     public String  updateUser(Long id, UserRequest userRequest) throws ResourceNotFoundException;
 
-    public String  deleteUserById(Long id, HttpServletRequest request) throws ResourceNotFoundException;
+    public String  deleteUserById(Long id, HttpServletRequest request) throws ResourceNotFoundException, BadRequestException;
 }
