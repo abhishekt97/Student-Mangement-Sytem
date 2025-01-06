@@ -7,6 +7,7 @@ import com.abhishek.sms.service.user.UserService;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
+import org.apache.coyote.BadRequestException;
 import org.springframework.data.domain.Page;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -47,7 +48,7 @@ public class UserController {
         return new ResponseEntity<>(userService.getUserById(id), HttpStatus.OK);
     }
 
-    @GetMapping("/getUserByName/{username}")
+    @GetMapping("/getUserByName/{name}")
     public ResponseEntity<UserResponse> getUserByUsername(
             @PathVariable String name
     ){
@@ -67,8 +68,7 @@ public class UserController {
     public ResponseEntity<String> deleteUserById(
             @PathVariable Long id,
             HttpServletRequest request
-    ) throws ResourceNotFoundException {
+    ) throws ResourceNotFoundException, BadRequestException {
         return new ResponseEntity<>(userService.deleteUserById(id, request), HttpStatus.NO_CONTENT);
     }
-
 }

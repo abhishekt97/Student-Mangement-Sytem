@@ -77,7 +77,7 @@ public class UserServiceImpl implements UserService {
         user.setFirstName(userRequest.getFirstName());
         user.setLastName(userRequest.getLastName());
         user.setEmail(userRequest.getEmail());
-        user.setBirthday(userRequest.getBirthday());
+        user.setBirthday(userRequest.getBirthDay());
         user.setGender(userRequest.getGender());
         user.setFatherName(userRequest.getFatherName());
         user.setMotherName(userRequest.getMotherName());
@@ -105,7 +105,6 @@ public class UserServiceImpl implements UserService {
         }else if ((loggedInUserRole == RoleType.VICE_PRINCIPLE) &&
             (deletedUserRole == RoleType.PRINCIPLE || deletedUserRole == RoleType.ADMIN)){
                 throw new BadRequestException(ErrorMessages.NOT_PERMITTED_METHOD);
-
         }
         userRepository.deleteById(id);
         return SuccessMessages.USER_DELETE;
