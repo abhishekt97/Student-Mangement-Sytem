@@ -7,7 +7,6 @@ import com.abhishek.sms.payload.response.user.StudentResponse;
 import com.abhishek.sms.service.user.StudentService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
-import org.apache.coyote.Response;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -43,7 +42,7 @@ public class StudentController {
     }
 
     @DeleteMapping("/delete/{id}")
-    public ResponseEntity<String> deleteStudent(@PathVariable Long id){
+    public ResponseEntity<String> deleteStudent(@PathVariable Long id) throws ResourceNotFoundException {
         return new ResponseEntity<>(studentService.deleteStudent(id), HttpStatus.NO_CONTENT);
     }
 
