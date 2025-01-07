@@ -61,4 +61,8 @@ public class ErrorMessages {
     public static final String NOT_FOUND_TEACHER_BY_USERNAME = "Error: Teacher with username %s not found" ;
 
 
+    //Academic Year
+    public static final String NOT_FOUND_ACADEMIC_YEAR = "Error: Academic year with name %s not found" ;
+    public static final String NOT_FOUND_ACADEMIC_YEAR_ID = "Error: Academic year with id %s not found" ;
+
 }
