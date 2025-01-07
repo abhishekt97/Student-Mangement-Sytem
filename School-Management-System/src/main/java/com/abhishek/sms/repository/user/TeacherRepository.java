@@ -31,4 +31,8 @@ public interface TeacherRepository extends JpaRepository<Teacher, Long> {
     @Modifying
     @Query("DELETE FROM Student u WHERE u.id = ?1")
     int deleteTeacherById(Long id);
+
+    boolean existsByPhoneNumber(String phoneNumber);
+
+    boolean existsByUsername(String username);
 }

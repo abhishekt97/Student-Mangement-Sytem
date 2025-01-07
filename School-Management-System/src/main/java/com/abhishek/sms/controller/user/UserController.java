@@ -71,4 +71,6 @@ public class UserController {
     ) throws ResourceNotFoundException, BadRequestException {
         return new ResponseEntity<>(userService.deleteUserById(id, request), HttpStatus.NO_CONTENT);
     }
+
+
 }

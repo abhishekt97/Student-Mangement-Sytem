@@ -8,6 +8,7 @@ import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 import lombok.experimental.SuperBuilder;
@@ -20,6 +21,7 @@ import java.util.Set;
 @Setter
 @SuperBuilder
 @RequiredArgsConstructor
+@NoArgsConstructor
 public class TeacherRequest extends BaseUserRequest {
 
 

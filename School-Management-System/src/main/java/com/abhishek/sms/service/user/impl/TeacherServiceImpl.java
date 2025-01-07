@@ -6,6 +6,7 @@ import com.abhishek.sms.payload.request.user.TeacherRequest;
 import com.abhishek.sms.payload.response.user.TeacherResponse;
 import com.abhishek.sms.repository.user.TeacherRepository;
 import com.abhishek.sms.service.user.TeacherService;
+import com.abhishek.sms.utils.Validator;
 import com.abhishek.sms.utils.messages.ErrorMessages;
 import com.abhishek.sms.utils.messages.SuccessMessages;
 import lombok.RequiredArgsConstructor;
@@ -20,8 +21,8 @@ import java.util.List;
 public class TeacherServiceImpl implements TeacherService {
 
     private final TeacherRepository teacherRepository;
-
     private final ModelMapper mapper;
+    private final Validator validator;
 
     @Override
     public List<TeacherResponse> getAllTeachers() {
@@ -37,6 +38,9 @@ public class TeacherServiceImpl implements TeacherService {
 
     @Override
     public Teacher saveTeacher(TeacherRequest teacherRequest) {
+        validator.checkDuplicateTeacher(teacherRequest.getUsername(),
+                                        teacherRequest.getEmail(),
+                                        teacherRequest.getPhoneNumber());
         Teacher newTeacher = mapper.map(teacherRequest, Teacher.class);
         return teacherRepository.save(newTeacher);
     }

@@ -9,7 +9,7 @@ import com.abhishek.sms.repository.user.UserRepository;
 import com.abhishek.sms.service.user.UserService;
 import com.abhishek.sms.utils.messages.ErrorMessages;
 import com.abhishek.sms.utils.PageUtil;
-import com.abhishek.sms.utils.UniquePropertyValidator;
+import com.abhishek.sms.utils.Validator;
 import com.abhishek.sms.utils.UserMapper;
 import com.abhishek.sms.utils.messages.SuccessMessages;
 import jakarta.servlet.http.HttpServletRequest;
@@ -23,7 +23,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class UserServiceImpl implements UserService {
 
-    private final UniquePropertyValidator validator;
+    private final Validator validator;
     private final UserRepository userRepository;
     private final UserMapper mapper;
     private final PageUtil pageUtil;
