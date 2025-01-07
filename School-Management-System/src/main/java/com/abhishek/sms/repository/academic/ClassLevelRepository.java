@@ -9,5 +9,5 @@ public interface ClassLevelRepository extends JpaRepository<ClassLevel, Long> {
 
     Optional<ClassLevel> findByName(String classLevel);
 
-
+    boolean existsByName(String name);
 }

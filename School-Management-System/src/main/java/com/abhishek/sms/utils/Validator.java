@@ -1,6 +1,7 @@
 package com.abhishek.sms.utils;
 
 import com.abhishek.sms.exception.ConflictException;
+import com.abhishek.sms.repository.academic.ClassLevelRepository;
 import com.abhishek.sms.repository.user.StudentRepository;
 import com.abhishek.sms.repository.user.TeacherRepository;
 import com.abhishek.sms.repository.user.UserRepository;
@@ -15,7 +16,7 @@ public class Validator {
     private final UserRepository userRepository;
     private final StudentRepository studentRepository;
     private final TeacherRepository teacherRepository;
-
+    private final ClassLevelRepository classLevelRepository;
 
     public void checkDuplicate(String username, String email, String phoneNumber){
 
@@ -49,6 +50,11 @@ public class Validator {
 
         if(teacherRepository.existsByUsername(username))
             throw new ConflictException(String.format(ErrorMessages.ALREADY_REGISTERED_USERNAME, username));
+    }
+
+    public void checkDuplicateClassLevel(String name){
+        if(classLevelRepository.existsByName(name))
+            throw new ConflictException(String.format(ErrorMessages.ALREADY_REGISTERED_NAME, name));
     }
 
 

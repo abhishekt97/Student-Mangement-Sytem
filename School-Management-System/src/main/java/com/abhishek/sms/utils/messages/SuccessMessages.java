@@ -47,7 +47,9 @@ public class SuccessMessages {
     public static final String STUDENT_DELETED = "Student Info is Deleted Successfully";
 
     //Academic Year
-
     public static final String ACADEMIC_YEAR_DELETED = "Academic Year deleted Successfully";
+
+    //Class Level
+    public static final String CLASS_LEVEL_DELETED = "Class level deleted successfully";
 
 }

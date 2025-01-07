@@ -20,6 +20,8 @@ public class ErrorMessages {
     public static final String ALREADY_REGISTERED_USERNAME = "Error: User with username %s is already registered";
     public static final String ALREADY_REGISTERED_PHONE_NUMBER = "Error: User with phone number %s is already registered";
     public static final String ALREADY_REGISTERED_EMAIL = "Error: User with email %s is already registered";
+    public static final String ALREADY_REGISTERED_NAME = "Error: name %s is already registered";
+
 
     //education term
     public static final String EDUCATION_START_DATE_IS_EARLIER_THAN_LAST_REGISTRATION_DATE = "Error: The start date cannot be earlier than the last registration date " ;
@@ -64,5 +66,8 @@ public class ErrorMessages {
     //Academic Year
     public static final String NOT_FOUND_ACADEMIC_YEAR = "Error: Academic year with name %s not found" ;
     public static final String NOT_FOUND_ACADEMIC_YEAR_ID = "Error: Academic year with id %s not found" ;
+
+    //Class Level
+    public static final String NOT_FOUND_CLASS_LEVEL = "Error: Class level with name %s not found.";
 
 }
