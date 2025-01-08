@@ -1,6 +1,7 @@
 package com.abhishek.sms.controller.academic;
 
 import com.abhishek.sms.entity.concretes.academic.Exam;
+import com.abhishek.sms.exception.ResourceNotFoundException;
 import com.abhishek.sms.payload.request.academic.ExamRequest;
 import com.abhishek.sms.payload.response.academic.ExamResponse;
 import com.abhishek.sms.service.academic.ExamService;
@@ -18,7 +19,7 @@ public class ExamController {
     private final ExamService examService;
 
     @GetMapping("/name/{name}")
-    public ResponseEntity<ExamResponse> getExam(@PathVariable String name){
+    public ResponseEntity<ExamResponse> getExam(@PathVariable String name) throws ResourceNotFoundException {
         return new ResponseEntity<>(examService.getExam(name), HttpStatus.OK);
     }
 
@@ -37,12 +38,12 @@ public class ExamController {
 
     @PutMapping("/update/{id}")
     public ResponseEntity<Exam> addExam(@RequestBody ExamRequest request,
-                                        @PathVariable Long id){
+                                        @PathVariable Long id) throws ResourceNotFoundException {
         return new ResponseEntity<>(examService.updateExam(id, request), HttpStatus.CREATED);
     }
 
     @DeleteMapping("/delete/{name}")
-    public ResponseEntity<String> deleteExam(@PathVariable String name){
+    public ResponseEntity<String> deleteExam(@PathVariable String name) throws ResourceNotFoundException {
         return new ResponseEntity<>(examService.deleteExam(name), HttpStatus.NO_CONTENT);
     }
 
