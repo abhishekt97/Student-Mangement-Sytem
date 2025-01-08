@@ -63,5 +63,4 @@ public class Validator {
         if(examRepository.existsByName(name))
             throw new ConflictException(String.format(ErrorMessages.ALREADY_EXIST_EXAM, name));
     }
-
 }

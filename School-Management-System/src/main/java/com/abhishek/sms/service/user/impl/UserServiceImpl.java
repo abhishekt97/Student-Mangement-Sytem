@@ -10,7 +10,7 @@ import com.abhishek.sms.service.user.UserService;
 import com.abhishek.sms.utils.messages.ErrorMessages;
 import com.abhishek.sms.utils.PageUtil;
 import com.abhishek.sms.utils.Validator;
-import com.abhishek.sms.utils.UserMapper;
+import com.abhishek.sms.utils.mapper.UserMapper;
 import com.abhishek.sms.utils.messages.SuccessMessages;
 import jakarta.servlet.http.HttpServletRequest;
 import lombok.RequiredArgsConstructor;

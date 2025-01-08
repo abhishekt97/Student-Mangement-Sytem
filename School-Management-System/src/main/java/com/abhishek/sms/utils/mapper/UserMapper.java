@@ -1,4 +1,4 @@
-package com.abhishek.sms.utils;
+package com.abhishek.sms.utils.mapper;
 
 import com.abhishek.sms.entity.concretes.user.User;
 import com.abhishek.sms.payload.request.user.UserRequest;
