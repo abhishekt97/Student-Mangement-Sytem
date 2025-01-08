@@ -70,4 +70,10 @@ public class ErrorMessages {
     //Class Level
     public static final String NOT_FOUND_CLASS_LEVEL = "Error: Class level with name %s not found.";
 
+    //Exam
+    public static final String NOT_FOUND_EXAM = "Error: Exam with name %s not found.";
+    public static final String NOT_FOUND_EXAM_ID = "Error: Exam with id %s not found.";
+    public static final String ALREADY_EXIST_EXAM = "Error: Exam with name %s is already exist";
+
+
 }

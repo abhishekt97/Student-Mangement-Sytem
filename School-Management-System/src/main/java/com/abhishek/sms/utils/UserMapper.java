@@ -17,7 +17,7 @@ public class UserMapper {
                 .gender(userRequest.getGender())
                 .firstName(userRequest.getFirstName())
                 .lastName(userRequest.getLastName())
-                .birthday(userRequest.getBirthday())
+                .birthday(userRequest.getBirthDay())
                 .password(userRequest.getPassword())
                 .phoneNumber(userRequest.getPhoneNumber())
                 .fatherName(userRequest.getFatherName())

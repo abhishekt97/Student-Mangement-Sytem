@@ -52,4 +52,7 @@ public class SuccessMessages {
     //Class Level
     public static final String CLASS_LEVEL_DELETED = "Class level deleted successfully";
 
+    //Exam
+    public static final String EXAM_DELETED = "Exam deleted successfully";
+
 }
