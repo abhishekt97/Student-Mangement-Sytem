@@ -1,9 +1,7 @@
 package com.abhishek.sms.controller.academic;
 
-import com.abhishek.sms.entity.concretes.academic.Exam;
 import com.abhishek.sms.entity.concretes.academic.ExamResult;
 import com.abhishek.sms.exception.ResourceNotFoundException;
-import com.abhishek.sms.payload.request.academic.ExamRequest;
 import com.abhishek.sms.payload.request.academic.ExamResultRequest;
 import com.abhishek.sms.payload.response.academic.ExamResultResponse;
 import com.abhishek.sms.service.academic.ExamResultService;
