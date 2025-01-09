@@ -25,6 +25,14 @@ public class Question extends BaseEntityWithIdLong {
 
     @ManyToOne()
     @JoinColumn(
+            name = "subject_id",
+            foreignKey = @ForeignKey(name = "subject_question_fk")
+    )
+    private Subject subject;
+
+
+    @ManyToOne()
+    @JoinColumn(
             name = "teacher_id",
             foreignKey =@ForeignKey(name = "teacher_question_fk")
     )

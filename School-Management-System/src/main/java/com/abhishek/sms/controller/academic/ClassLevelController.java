@@ -1,4 +1,4 @@
-package com.abhishek.sms.controller.user;
+package com.abhishek.sms.controller.academic;
 
 import com.abhishek.sms.entity.concretes.academic.ClassLevel;
 import com.abhishek.sms.exception.ResourceNotFoundException;

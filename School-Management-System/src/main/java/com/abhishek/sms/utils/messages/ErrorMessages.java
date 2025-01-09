@@ -61,7 +61,7 @@ public class ErrorMessages {
     //Teacher
 
     public static final String NOT_FOUND_TEACHER = "Error: Teacher with id %s not found" ;
-    public static final String NOT_FOUND_TEACHER_BY_USERNAME = "Error: Teacher with username %s not found" ;
+    public static final String NOT_FOUND_TEACHER_BY_NAME = "Error: Teacher with name %s not found" ;
 
 
     //Academic Year
@@ -81,4 +81,8 @@ public class ErrorMessages {
     public static final String NOT_FOUND_EXAM_RESULT = "Error: Exam result with id %s not found.";
     public static final String ALREADY_EXIST_EXAM_RESULT = "Error: Exam result with name %s is already exist";
 
+    //Question
+    public static final String NOT_FOUND_QUESTION = "Error: Question with id %s not found.";
+    //Subject
+    public static final String NOT_FOUND_SUBJECT = "Error: Subject with name %s not found.";
 }
