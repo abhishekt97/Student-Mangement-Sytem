@@ -61,5 +61,6 @@ public class SuccessMessages {
 
     //Subject
     public static final String SUBJECT_DELETED = "Subject deleted successfully";
+    public static final String PROGRAM_DELETED = "Program deleted successfully";
 
 }

@@ -3,6 +3,7 @@ package com.abhishek.sms.utils;
 import com.abhishek.sms.exception.ConflictException;
 import com.abhishek.sms.repository.academic.ClassLevelRepository;
 import com.abhishek.sms.repository.academic.ExamRepository;
+import com.abhishek.sms.repository.academic.ProgramRepository;
 import com.abhishek.sms.repository.academic.SubjectRepository;
 import com.abhishek.sms.repository.user.StudentRepository;
 import com.abhishek.sms.repository.user.TeacherRepository;
@@ -21,6 +22,7 @@ public class Validator {
     private final ClassLevelRepository classLevelRepository;
     private final ExamRepository examRepository;
     private final SubjectRepository subjectRepository;
+    private final ProgramRepository programRepository;
 
     public void checkDuplicate(String username, String email, String phoneNumber){
 
@@ -69,5 +71,10 @@ public class Validator {
     public void checkDuplicateSubject(String name) {
         if(subjectRepository.existsByName(name))
             throw new ConflictException(String.format(ErrorMessages.ALREADY_EXIST_SUBJECT, name));
+    }
+
+    public void checkDuplicateProgram(String name) {
+        if(programRepository.existsByName(name))
+            throw new ConflictException(String.format(ErrorMessages.ALREADY_EXIST_PROGRAM, name));
     }
 }

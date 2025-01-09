@@ -89,4 +89,11 @@ public class ErrorMessages {
     public static final String NOT_FOUND_SUBJECT = "Error: Subject with name %s not found.";
     public static final String NOT_FOUND_SUBJECT_BY_TEACHER_ID = "Error: Subject with teacher id %s not found.";
     public static final String ALREADY_EXIST_SUBJECT = "Error: Subject with name %s is already registered!";
+
+
+    //Program
+    public static final String NOT_FOUND_PROGRAM = "Error: Program with name %s not found.";
+    public static final String NOT_FOUND_PROGRAM_FOR_STUDENT_ID = "Error: Program with student id %s not found.";
+    public static final String ALREADY_EXIST_PROGRAM = "Error: Program with name %s is already registered!";
+
 }

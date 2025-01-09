@@ -35,6 +35,4 @@ public class Program extends BaseEntityWithIdLong implements Serializable {
     @OneToMany(mappedBy = "program", cascade = CascadeType.ALL)
     private Set<Subject> subjects = new HashSet<>();
 
-
-
 }

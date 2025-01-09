@@ -14,4 +14,7 @@ public interface ProgramRepository extends JpaRepository<Program, Long> {
 
     Optional<Program> findBySubjects(Subject subject);
 
+    Optional<Program> findByStudentsId(Long studentId);
+
+    boolean existsByName(String name);
 }
