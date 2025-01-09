@@ -5,6 +5,7 @@ import com.abhishek.sms.entity.concretes.user.Teacher;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.io.Serializable;
 import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
@@ -16,7 +17,7 @@ import java.util.Set;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class Exam extends BaseEntityWithIdLong {
+public class Exam extends BaseEntityWithIdLong implements Serializable {
 
     private String name;
     private String description;

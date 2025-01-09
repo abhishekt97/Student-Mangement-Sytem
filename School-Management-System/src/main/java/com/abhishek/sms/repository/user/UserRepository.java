@@ -1,14 +1,11 @@
 package com.abhishek.sms.repository.user;
 
 import com.abhishek.sms.entity.concretes.user.User;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.jpa.repository.Query;
-import org.springframework.data.repository.query.Param;
+import org.springframework.stereotype.Repository;
 
-import java.util.List;
 
+@Repository
 public interface UserRepository extends JpaRepository<User, Long> {
 
     boolean existsByUsername(String username);
@@ -17,11 +14,5 @@ public interface UserRepository extends JpaRepository<User, Long> {
 
     boolean existsByPhoneNumber(String phoneNumber);
 
-    @Query("SELECT u FROM User u WHERE u.roleType.roleText = :role")
-    Page<User> findByUserByRole(@Param("role") String role, Pageable pageable);
-
     User findByUsername(String username);
-
-    @Query(nativeQuery = true, value = "SELECT * FROM User u WHERE u.roleType.roleText = TEACHER")
-    List<User> findAllTeachers();
 }

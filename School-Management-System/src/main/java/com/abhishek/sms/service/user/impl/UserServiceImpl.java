@@ -15,8 +15,6 @@ import com.abhishek.sms.utils.messages.SuccessMessages;
 import jakarta.servlet.http.HttpServletRequest;
 import lombok.RequiredArgsConstructor;
 import org.apache.coyote.BadRequestException;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 @RequiredArgsConstructor
@@ -39,16 +37,6 @@ public class UserServiceImpl implements UserService {
         User save = userRepository.save(user);
 
         return mapper.mapUserToUserResponse(save);
-    }
-
-    @Override
-    public Page<UserResponse> getUsersByPage(int page, int size, String sort, String type, String role) {
-
-        Pageable pageable = pageUtil.getPageableWithProperties(page, size, sort, type);
-
-        Page<User> userByRole = userRepository.findByUserByRole(role, pageable);
-
-        return userByRole.map(mapper::mapUserToUserResponse);
     }
 
     @Override

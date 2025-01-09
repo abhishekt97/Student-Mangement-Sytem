@@ -18,7 +18,6 @@ public class ClassLevelController {
 
     private final ClassLevelService classLevelService;
 
-
     @GetMapping("/all")
     public ResponseEntity<Page<ClassLevelResponse>> getAllClassLevels(
             @RequestParam(value = "page", defaultValue = "0") int page,

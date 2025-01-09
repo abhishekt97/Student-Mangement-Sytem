@@ -38,7 +38,7 @@ public class SubjectServiceImpl implements SubjectService {
     @Override
     public SubjectResponse getSubjectByTeacher(Long id) throws ResourceNotFoundException {
 
-        Subject subject = subjectRepository.findByTeachersId(id).orElseThrow(() ->
+        Subject subject = subjectRepository.findByTeacherId(id).orElseThrow(() ->
                 new ResourceNotFoundException(String.format(ErrorMessages.NOT_FOUND_SUBJECT_BY_TEACHER_ID, id)));
 
         return mapper.mapSubjectToSubjectResponse(subject);

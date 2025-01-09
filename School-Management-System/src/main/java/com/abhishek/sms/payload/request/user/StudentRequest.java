@@ -6,17 +6,17 @@ import com.abhishek.sms.entity.concretes.academic.ExamResult;
 import com.abhishek.sms.entity.concretes.academic.Program;
 import com.abhishek.sms.entity.concretes.user.Parent;
 import com.abhishek.sms.payload.request.abstracts.BaseUserRequest;
+import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 import lombok.experimental.SuperBuilder;
 
 @Getter
 @Setter
 @SuperBuilder
+@EqualsAndHashCode
 @NoArgsConstructor
-@RequiredArgsConstructor
 public class StudentRequest extends BaseUserRequest {
 
     private boolean isSuspended;

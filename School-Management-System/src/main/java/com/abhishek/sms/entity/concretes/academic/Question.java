@@ -5,6 +5,8 @@ import com.abhishek.sms.entity.concretes.user.Teacher;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.io.Serializable;
+
 @Entity
 @Data
 @EqualsAndHashCode(callSuper = true)
@@ -13,7 +15,7 @@ import lombok.*;
 @AllArgsConstructor
 @Builder
 
-public class Question extends BaseEntityWithIdLong {
+public class Question extends BaseEntityWithIdLong implements Serializable {
 
     private String problem;
     private String optionA;

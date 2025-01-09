@@ -35,6 +35,8 @@ public class Student extends BasePersonEntity implements Serializable {
     @Enumerated(EnumType.STRING)
     private RoleType role = RoleType.STUDENT;
 
+    private String phoneNumber;
+
     private boolean isPromotedToYear2;
     private boolean isPromotedToYear3;
     private boolean isGraduated;

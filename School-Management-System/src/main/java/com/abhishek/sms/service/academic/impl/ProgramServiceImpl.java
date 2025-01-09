@@ -64,10 +64,10 @@ public class ProgramServiceImpl implements ProgramService {
 
 
     @Override
-    public ProgramResponse getProgramForStudent(Long studentId) throws ResourceNotFoundException {
+    public ProgramResponse getProgramForStudent(String username) throws ResourceNotFoundException {
 
-        Program program = programRepository.findByStudentsId(studentId).orElseThrow(() ->
-                new ResourceNotFoundException(String.format(ErrorMessages.NOT_FOUND_PROGRAM_FOR_STUDENT_ID, studentId)));
+        Program program = programRepository.findByStudentsUsername(username).orElseThrow(() ->
+                new ResourceNotFoundException(String.format(ErrorMessages.NOT_FOUND_PROGRAM_FOR_STUDENT_ID, username)));
 
         return mapper.mapProgramToProgramResponse(program);
     }

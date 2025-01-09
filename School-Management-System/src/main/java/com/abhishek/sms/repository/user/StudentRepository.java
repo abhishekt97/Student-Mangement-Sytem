@@ -29,4 +29,5 @@ public interface StudentRepository extends JpaRepository<Student, Long> {
     int deleteStudentById(Long id);
 
     boolean existsByPhoneNumber(String phoneNumber);
+
 }

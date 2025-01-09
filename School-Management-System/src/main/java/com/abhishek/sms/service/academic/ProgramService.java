@@ -11,7 +11,7 @@ public interface ProgramService {
 
     ProgramResponse getProgramByName(String name) throws ResourceNotFoundException;
 
-    ProgramResponse getProgramForStudent(Long id) throws ResourceNotFoundException;
+    ProgramResponse getProgramForStudent(String username) throws ResourceNotFoundException;
 
     Program addProgram(ProgramRequest programRequest) throws ResourceNotFoundException;
 

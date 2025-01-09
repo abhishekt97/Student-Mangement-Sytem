@@ -32,9 +32,9 @@ public class ProgramController {
         return new ResponseEntity<>(programService.getProgramByName(name), HttpStatus.OK);
     }
 
-    @GetMapping("/studentId/{studentId}")
-    public ResponseEntity<ProgramResponse> getProgramForStudent(@PathVariable Long studentId) throws ResourceNotFoundException {
-        return new ResponseEntity<>(programService.getProgramForStudent(studentId), HttpStatus.OK);
+    @GetMapping("/studentUsername/{username}")
+    public ResponseEntity<ProgramResponse> getProgramForStudent(@PathVariable String username) throws ResourceNotFoundException {
+        return new ResponseEntity<>(programService.getProgramForStudent(username), HttpStatus.OK);
     }
 
     @PostMapping("/add")

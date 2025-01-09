@@ -22,7 +22,6 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
@@ -46,7 +45,7 @@ public class QuestionServiceImpl implements QuestionService {
 
         Subject subject = getSubjectForQuestion(subjectName);
 
-        List<Question> questionList = questionRepository.findBySubjectsName(subject.getName());
+        List<Question> questionList = questionRepository.findBySubjectName(subject.getName());
         List<QuestionResponse> questionResponseList = new ArrayList<>();
         for (Question q : questionList){
             questionResponseList.add(mapper.mapQuestionToQuestionResponse(q));

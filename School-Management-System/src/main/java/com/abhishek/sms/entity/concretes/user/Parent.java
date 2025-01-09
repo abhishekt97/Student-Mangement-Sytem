@@ -7,6 +7,7 @@ import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import lombok.*;
 
+import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -17,7 +18,7 @@ import java.util.Set;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class Parent extends BasePersonEntity {
+public class Parent extends BasePersonEntity implements Serializable {
 
     @Column(nullable = false, length = 10)
     private String phoneNumber;

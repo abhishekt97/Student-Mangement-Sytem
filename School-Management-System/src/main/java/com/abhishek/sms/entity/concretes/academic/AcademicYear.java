@@ -5,7 +5,6 @@ import com.abhishek.sms.entity.concretes.user.Student;
 import com.abhishek.sms.entity.concretes.user.Teacher;
 import jakarta.persistence.*;
 import lombok.*;
-import lombok.experimental.SuperBuilder;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -13,12 +12,13 @@ import java.util.Date;
 import java.util.List;
 
 @Entity
-@Data
+@Getter
+@Setter
 @EqualsAndHashCode(callSuper = true)
 @Table
 @NoArgsConstructor
 @AllArgsConstructor
-@SuperBuilder
+@Builder
 public class AcademicYear extends BaseEntityWithIdLong implements Serializable {
 
     private String name;

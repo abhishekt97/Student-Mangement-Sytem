@@ -6,7 +6,6 @@ import com.abhishek.sms.entity.enums.ApplicationStatus;
 import com.abhishek.sms.entity.enums.RoleType;
 import jakarta.persistence.*;
 import lombok.*;
-import lombok.experimental.SuperBuilder;
 
 import java.io.Serializable;
 import java.util.Date;
@@ -39,6 +38,8 @@ public class Teacher extends BasePersonEntity implements Serializable {
             cascade = CascadeType.PERSIST
     )
     private Subject subject;
+
+    private String phoneNumber;
 
     @Enumerated(EnumType.STRING)
     private ApplicationStatus status = ApplicationStatus.PENDING;
