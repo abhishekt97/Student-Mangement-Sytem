@@ -35,8 +35,8 @@ public class Subject extends BaseEntityWithIdLong implements Serializable {
     private Teacher teacher;
 
     @OneToOne(cascade = CascadeType.PERSIST)
-    @JoinColumn(name = "academicTerm_id", foreignKey = @ForeignKey(name = "subject_academicTerm_fk"))
-    private AcademicTerm academicTerm;
+    @JoinColumn(name = "academicYear_id", foreignKey = @ForeignKey(name = "subject_academicYear_fk"))
+    private AcademicYear academicYear;
 
     @ManyToOne()
     @JoinColumn(name = "program_id", foreignKey = @ForeignKey(name = "subject_program_fk"))

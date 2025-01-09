@@ -55,7 +55,11 @@ public class SuccessMessages {
     //Exam
     public static final String EXAM_DELETED = "Exam deleted successfully";
     public static final String EXAM_RESULT_DELETED = "Exam result deleted successfully";
+
     //Question
     public static final String QUESTION_DELETED = "Question deleted successfully";
+
+    //Subject
+    public static final String SUBJECT_DELETED = "Subject deleted successfully";
 
 }

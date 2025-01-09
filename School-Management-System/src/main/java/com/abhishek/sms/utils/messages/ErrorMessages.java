@@ -2,6 +2,7 @@ package com.abhishek.sms.utils.messages;
 
 public class ErrorMessages {
 
+
     private ErrorMessages(){}
 
 
@@ -83,6 +84,9 @@ public class ErrorMessages {
 
     //Question
     public static final String NOT_FOUND_QUESTION = "Error: Question with id %s not found.";
+
     //Subject
     public static final String NOT_FOUND_SUBJECT = "Error: Subject with name %s not found.";
+    public static final String NOT_FOUND_SUBJECT_BY_TEACHER_ID = "Error: Subject with teacher id %s not found.";
+    public static final String ALREADY_EXIST_SUBJECT = "Error: Subject with name %s is already registered!";
 }
